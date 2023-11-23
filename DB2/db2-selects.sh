@@ -3,6 +3,7 @@
 ##############################################################################
 # changelog
 # date        version remark
+# 2023-11-23  0.1.2c  moved to new repo
 # 2023-11-10  0.1.2b  replaces tabs with 2 spaces  	
 # 2023-11-10  0.1.2   moved table names to array for easy adapt
 # 2023-02-20  0.1.1   added some tables + info on list 
