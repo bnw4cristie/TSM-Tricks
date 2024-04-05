@@ -3,6 +3,7 @@
 ##############################################################################
 # changelog
 # date        version remark
+# 2023-04-05  0.1.3   added some more tables to analyse
 # 2023-11-23  0.1.2c  moved to new repo
 # 2023-11-10  0.1.2b  replaces tabs with 2 spaces  	
 # 2023-11-10  0.1.2   moved table names to array for easy adapt
@@ -20,7 +21,7 @@
 #   (C) 2020 -- 2023 Bjørn Nachtwey, tsm@bjoernsoe.net
 #
 #   Grateful Thanks to the Companies, who allowed to do the development
-#   (C) 2023         Cristie Data Gmbh, www.cristie.de
+#   (C) 2023, 2024   Cristie Data Gmbh, www.cristie.de
 #   (C) 2020 -- 2023 GWDG, www.gwdg.de
 #
 ##############################################################################
@@ -61,15 +62,20 @@ tables=(                      \
     "GROUP_LEADERS"           \
     "EXPORT_OBJECTS"          \
     "REPLICATED_OBJECTS"      \
+    "REPLICATING_OBJECTS"     \
     "SC_OBJECT_TRACKER"       \
+    "SD_CHUNK_LOCATIONS"      \
+    "SD_CHUNK_COPIES"         \
+    "SD_RECON_ORDER"          \
+    "SD_REFCOUNT_UPDATES"     \
+    "SD_REPLICATING_CHUNKS"   \
+    "SD_NON_DEDUP_LOCATIONS"  \
+    "SD_REPLICATED_CHUNKS"    \
+    "
     "TSMMON_STATUS"           )
 
 # possible further tables
-#    "SD_CHUNK_LOCATIONS"      \       
-#    "SD_RECON_ORDER"          \
-#    "SD_REPLICATED_CHUNKS"    \
-
-"
+#    added above, just delete lines of "non-interest" :-)
 
 # print headline
 printf "%25s ; %15s ; %15s ; %15s ; %25s ; %10s \n" "Tabname" "object-Count" "est. time (sec)" "object-space" "space occupied by table" "Pagesize"
