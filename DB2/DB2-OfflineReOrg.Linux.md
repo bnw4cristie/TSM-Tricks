@@ -4,6 +4,7 @@
 ##############################################################################
 # changelog
 # date          version remark
+# 2024-04-10    0.2.4   add remark on table "SD_REPLICATING_CHUNKS"
 # 2023-11-21    0.2.3   moved to new repo, changed one URL
 # 2023-11-10    0.2.2   add some remarks
 # 2023-09-21    0.2.1   add subsection "check summary file" and "selecting tabels"
@@ -20,10 +21,10 @@
 #   A template for the workflow of a Db2 Offline Reorganisation -- Linux Version
 #
 #   The Author:
-#   (C) 2020 -- 2023 Bjørn Nachtwey, tsm@bjoernsoe.net
+#   (C) 2020 -- 2024 Bjørn Nachtwey, tsm@bjoernsoe.net
 #
 #   Grateful Thanks to the Companies, who allowed to do the development
-#   (C) 2023         Cristie Data Gmbh, www.cristie.de
+#   (C) 2023, 2024   Cristie Data Gmbh, www.cristie.de
 #   (C) 2020 -- 2023 GWDG, www.gwdg.de
 #
 ##############################################################################
@@ -110,6 +111,12 @@ consider
     * small wins are not useful as reorganiaztion costs time and do not really speed up db2 operations
   * take the _space needed_ from the next section as a hint how much data is stored in a single table to consider the win for each table
 
+> **IMPORTANT:**
+> 
+> Due to some painful experience: 
+>
+> Defragmentation on table `SD_REPLICATING_CHUNKS` has an **massive impact** on the _chunk deletion threads_. Even if this table looks very small and the savings are tiny, I strongly recommend to reorganize it every time you do an offline reorg!
+
 **BUT:** Doing Offline Reoganizations for many times, I observered it often reclaims about 50% more space than estimated by the script [1] :-)
 
 ## [ ] Get Pagessize and estimate temporary space needed
@@ -140,15 +147,15 @@ tsmXYZ@tsmhostX:~> bash /OfflineReOrg/bin/db-selects.sh
             TSMMON_STATUS ;         3715341 ;          26.538 ;       292830496 ;        0.273 GB ;        16K
 ```
 
-**NOTICE**:
+> **NOTICE**:
+>
+>- estimated times are completely inaccurate
+>- estimated space requirement fits reasonably
 
-- estimated times are completely inaccurate
-- estimated space requirement fits reasonably
-
-**BE AWARE**:
-
-- `ARCHIVE_OBJECTS` and `BACKUP_OBJECTS` are of size *32K*
-- `REPLICATED_OBJECTS` uses *8K*
+>**BE AWARE**:
+>
+>- `ARCHIVE_OBJECTS` and `BACKUP_OBJECTS` are of size *32K*
+>- `REPLICATED_OBJECTS` uses *8K*
 
 ## [ ] Stop any activity
 
