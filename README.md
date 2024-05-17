@@ -11,3 +11,9 @@ Just collectin' all my tricks found running TSM for some time :-)
 
 **IMPORTANT**<br>
 Server Major Releases (ending with `.0` / `-000`) must be downloaded using the customer portal as the versions on the ftp server do not include the license file!
+
+## Blueprints & Blueprint Tools
+* Overview page<br>
+  https://www.ibm.com/support/pages/ibm-storage-protect-blueprints
+* The `tsmdiskperf` tool is now part of the whole _Blueprint Configuration Scripts_ Collection ... and called `spdiskperf.pl` 
+  https://www.ibm.com/support/pages/system/files/inline-files/sp-config-v51.zip
