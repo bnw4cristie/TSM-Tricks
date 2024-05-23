@@ -16,4 +16,5 @@ Server Major Releases (ending with `.0` / `-000`) must be downloaded using the c
 * Overview page<br>
   https://www.ibm.com/support/pages/ibm-storage-protect-blueprints
 * The `tsmdiskperf` tool is now part of the whole _Blueprint Configuration Scripts_ Collection ... and called `spdiskperf.pl` 
-  https://www.ibm.com/support/pages/system/files/inline-files/sp-config-v51.zip
+  https://www.ibm.com/support/pages/system/files/inline-files/sp-config-v51.zip<br>
+  See also my [Wiki Page](https://github.com/bnw4cristie/TSM-Tricks/wiki/IBM-Disk-Performance-Tool)
